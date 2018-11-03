@@ -6,16 +6,19 @@ public class Order {
     private Integer measureId;
     private short orderStatue;
     private Integer orderPrice;
-    private Integer clouthesId;
+    private Integer clothesId;
     private Integer quantity;
     private String createTime;
 
-    public Order(String openid, Integer measureId, short orderStatue, Integer orderPrice, Integer clouthesId, Integer quantity, String createTime) {
+    public Order() {
+    }
+
+    public Order(String openid, Integer measureId, short orderStatue, Integer orderPrice, Integer clothesId, Integer quantity, String createTime) {
         this.openid = openid;
         this.measureId = measureId;
         this.orderStatue = orderStatue;
         this.orderPrice = orderPrice;
-        this.clouthesId = clouthesId;
+        this.clothesId = clothesId;
         this.quantity = quantity;
         this.createTime = createTime;
     }
@@ -60,12 +63,12 @@ public class Order {
         this.orderPrice = orderPrice;
     }
 
-    public Integer getClouthesId() {
-        return clouthesId;
+    public Integer getclothesId() {
+        return clothesId;
     }
 
-    public void setClouthesId(Integer clouthesId) {
-        this.clouthesId = clouthesId;
+    public void setclothesId(Integer clothesId) {
+        this.clothesId = clothesId;
     }
 
     public Integer getQuantity() {

@@ -12,10 +12,10 @@ import java.util.List;
 @Mapper
 @Component(value ="Order")
 public interface OrderMapper {
-    @Insert("insert into order (openid,measureId,orderStatue,orderPrice,clouthesId,quantity,createTime) " +
+    @Insert("insert into orders(openid,measureId,orderStatue,orderPrice,clothesId,quantity,createTime) " +
             "value(#{o.openid},#{o.measureId},#{o.orderStatue},#{o.orderPrice}," +
-            "#{o.clouthesId},#{o.quantity},#{o.createTime})")
+            "#{o.clothesId},#{o.quantity},#{o.createTime})")
     void insertOrder(@Param("o") Order o);
-    @Select("select * from order where openid =#{openid} and orderStatue=0")
+    @Select("select * from orders where openid =#{openid} and orderStatue=0")
     List<Order> selectOrderList(@Param("openid")String openid);
 }

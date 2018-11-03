@@ -7,6 +7,7 @@ import xyz.korme.fastfation.common.response.RespCode;
 import xyz.korme.fastfation.common.response.ResponseEntity;
 import xyz.korme.fastfation.mapper.OrderMapper;
 import xyz.korme.fastfation.model.Order;
+import xyz.korme.fastfation.service.timeUtil.TimeUtil;
 
 import java.util.List;
 
@@ -14,8 +15,11 @@ import java.util.List;
 public class OrderController {
     @Autowired
     OrderMapper orderMapper;
+    @Autowired
+    TimeUtil timeUtil;
     @RequestMapping(value = "/insertOrder")
     private ResponseEntity insertOrder(Order order){
+        order.setCreateTime(timeUtil.getNowTime());
         orderMapper.insertOrder(order);
         return new ResponseEntity(RespCode.SUCCESS);
     }

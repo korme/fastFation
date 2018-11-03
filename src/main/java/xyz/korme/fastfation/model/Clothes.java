@@ -3,8 +3,8 @@ package xyz.korme.fastfation.model;
 public class Clothes {
     private Integer clothesId;
     private String clothesName;
-    private String  img;
-    private String  showPrice;
+    private String img;
+    private String showPrice;
 
     public Integer getClothesId() {
         return clothesId;

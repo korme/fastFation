@@ -14,7 +14,11 @@ public class MeasureInfo {
     private String notes;
     private short types;
 
-    public MeasureInfo(String openid, String sizeName, Integer weight, Integer height, Integer bust, Integer neck, Integer sleeve, Integer waist, Integer trousers, String notes, short types) {
+    public MeasureInfo() {
+    }
+
+    public MeasureInfo(Integer measureId, String openid, String sizeName, Integer weight, Integer height, Integer bust, Integer neck, Integer sleeve, Integer waist, Integer trousers, String notes, short types) {
+        this.measureId = measureId;
         this.openid = openid;
         this.sizeName = sizeName;
         this.weight = weight;

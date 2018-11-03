@@ -9,6 +9,9 @@ public class ClothesDetailRes {
     private String description;
     private List<String> detailImgs;
 
+    public ClothesDetailRes() {
+    }
+
     public ClothesDetailRes(String productName, List<String> swiperImgs, String price, String description, List<String> detailImgs) {
         this.productName = productName;
         this.swiperImgs = swiperImgs;

@@ -14,6 +14,9 @@ public class User {
         this.createTime = createTime;
     }
 
+    public User() {
+    }
+
     public int getUserId() {
         return userId;
     }

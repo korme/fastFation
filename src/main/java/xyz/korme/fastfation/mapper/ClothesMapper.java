@@ -16,7 +16,7 @@ public interface ClothesMapper {
     @Select("select clothesId,clothesName,img,showPrice from clothes where category=#{category}")
     List<Clothes> selectClothesList(@Param("category")short category);
 
-    @Select("select * from clothes where couthesId=#{clothesId} ")
+    @Select("select * from clothes where clothesId=#{clothesId} ")
     ClothesDetail selectClothesDetail(@Param("clothesId") Integer clothesId);
 
 }

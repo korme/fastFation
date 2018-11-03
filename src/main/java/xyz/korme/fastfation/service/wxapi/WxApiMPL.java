@@ -6,7 +6,9 @@ import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
+@Service
 public class WxApiMPL implements WxApi{
     @Value("${wxapp.appid}")
     String appid;//填写appid
