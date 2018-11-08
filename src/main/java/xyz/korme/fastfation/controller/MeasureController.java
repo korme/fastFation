@@ -7,6 +7,7 @@ import xyz.korme.fastfation.common.response.RespCode;
 import xyz.korme.fastfation.common.response.ResponseEntity;
 import xyz.korme.fastfation.mapper.MeasureMapper;
 import xyz.korme.fastfation.model.MeasureInfo;
+import xyz.korme.fastfation.service.timeUtil.TimeUtil;
 
 import java.util.List;
 
@@ -14,9 +15,11 @@ import java.util.List;
 public class MeasureController {
     @Autowired
     MeasureMapper measureMapper;
-
+    @Autowired
+    TimeUtil timeUtil;
     @RequestMapping(value = "/insertMeasureInfo")
     public ResponseEntity insertMeasureInfo(MeasureInfo measureInfo){
+        measureInfo.setTimeAdd(timeUtil.getNowTime());
         measureMapper.insetMeasureInfo(measureInfo);
         return new ResponseEntity(RespCode.SUCCESS);
     }

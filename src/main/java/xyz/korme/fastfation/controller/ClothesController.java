@@ -18,14 +18,17 @@ public class ClothesController {
     @Autowired
     ClothesMapper clothesMapper;
     @RequestMapping("/clothesList")
-    public ResponseEntity findClothesList(short category){
-        List<Clothes> result=clothesMapper.selectClothesList(category);
+    public ResponseEntity findClothesList(short cateid){
+        List<Clothes> result=clothesMapper.selectClothesList(cateid);
+        for(Clothes i:result){
+            i.setPrice(i.getShowPrice());
+        }
         return new ResponseEntity(RespCode.SUCCESS,result);
     }
 
     @RequestMapping("/couthesDetail")
-    private ResponseEntity findClothesDetail(Integer clothesId){
-        ClothesDetail temp=clothesMapper.selectClothesDetail(clothesId);
+    private ResponseEntity findClothesDetail(Integer idProduct){
+        ClothesDetail temp=clothesMapper.selectClothesDetail(idProduct);
         List<String> img=new ArrayList();
         List<String> detailImg=new ArrayList();
         String tempString=temp.getImg0();

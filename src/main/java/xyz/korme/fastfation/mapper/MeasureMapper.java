@@ -10,11 +10,11 @@ import xyz.korme.fastfation.model.MeasureInfo;
 import java.util.List;
 
 @Mapper
-@Component(value ="MeasureInfo")
+@Component(value ="measureInfo")
 public interface MeasureMapper {
     @Insert("insert into measureinfo (openid,sizeName,weight,height,bust,neck," +
-            "sleeve,waist,trousers,notes,types) value(#{m.openid},#{m.sizeName},#{m.weight},#{m.height}," +
-            "#{m.bust},#{m.neck},#{m.sleeve},#{m.waist},#{m.trousers},#{m.notes},#{m.types})")
+            "sleeve,waist,trousers,notes,types,timeAdd) value(#{m.openid},#{m.sizeName},#{m.weight},#{m.height}," +
+            "#{m.bust},#{m.neck},#{m.sleeve},#{m.waist},#{m.trousers},#{m.notes},#{m.types},#{m.timeAdd})")
     void insetMeasureInfo(@Param("m") MeasureInfo m);
 
     @Select("select * from measureinfo where measureId=#{measureId}")

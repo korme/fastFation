@@ -5,9 +5,26 @@ public class Clothes {
     private String clothesName;
     private String img;
     private String showPrice;
+    private String price;
+
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
 
     public Integer getClothesId() {
         return clothesId;
+    }
+
+    public String getShowPrice() {
+        return showPrice;
+    }
+
+    public void setShowPrice(String showPrice) {
+        this.showPrice = showPrice;
     }
 
     public void setClothesId(Integer clothesId) {
@@ -30,11 +47,4 @@ public class Clothes {
         this.img = img;
     }
 
-    public String getShowPrice() {
-        return showPrice;
-    }
-
-    public void setShowPrice(String showPrice) {
-        this.showPrice = showPrice;
-    }
 }

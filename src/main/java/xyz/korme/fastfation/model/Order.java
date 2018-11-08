@@ -9,18 +9,32 @@ public class Order {
     private Integer clothesId;
     private Integer quantity;
     private String createTime;
+    private String idProduct;
+    private Integer addressId;
 
-    public Order() {
-    }
-
-    public Order(String openid, Integer measureId, short orderStatue, Integer orderPrice, Integer clothesId, Integer quantity, String createTime) {
+    public Order(String openid, Integer measureId, short orderStatue, Integer orderPrice, String createTime, Integer addressId) {
         this.openid = openid;
         this.measureId = measureId;
         this.orderStatue = orderStatue;
         this.orderPrice = orderPrice;
-        this.clothesId = clothesId;
-        this.quantity = quantity;
         this.createTime = createTime;
+        this.addressId = addressId;
+    }
+
+    public String getIdProduct() {
+        return idProduct;
+    }
+
+    public void setIdProduct(String idProduct) {
+        this.idProduct = idProduct;
+    }
+
+    public Integer getAddressId() {
+        return addressId;
+    }
+
+    public void setAddressId(Integer addressId) {
+        this.addressId = addressId;
     }
 
     public Integer getOrderId() {
@@ -63,11 +77,11 @@ public class Order {
         this.orderPrice = orderPrice;
     }
 
-    public Integer getclothesId() {
+    public Integer getClothesId() {
         return clothesId;
     }
 
-    public void setclothesId(Integer clothesId) {
+    public void setClothesId(Integer clothesId) {
         this.clothesId = clothesId;
     }
 
@@ -86,4 +100,9 @@ public class Order {
     public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
+
+    public Order() {
+    }
+
+
 }

@@ -13,10 +13,12 @@ import java.util.List;
 @Component(value = "ClouthesMapper")
 public interface ClothesMapper {
 
-    @Select("select clothesId,clothesName,img,showPrice from clothes where category=#{category}")
-    List<Clothes> selectClothesList(@Param("category")short category);
+    @Select("select clothesId,clothesName,img,showPrice from clothes where cateid=#{cateid}")
+    List<Clothes> selectClothesList(@Param("cateid")short cateid);
 
     @Select("select * from clothes where clothesId=#{clothesId} ")
     ClothesDetail selectClothesDetail(@Param("clothesId") Integer clothesId);
+    @Select("select originalPrice from clothes where clothesId=#{clothesId}")
+    int findClothesPrice(@Param("clothesId")int clothesId);
 
 }

@@ -13,6 +13,7 @@ public class MeasureInfo {
     private Integer trousers;
     private String notes;
     private short types;
+    private String timeAdd;
 
     public MeasureInfo() {
     }
@@ -30,6 +31,14 @@ public class MeasureInfo {
         this.trousers = trousers;
         this.notes = notes;
         this.types = types;
+    }
+
+    public String getTimeAdd() {
+        return timeAdd;
+    }
+
+    public void setTimeAdd(String timeAdd) {
+        this.timeAdd = timeAdd;
     }
 
     public Integer getMeasureId() {
