@@ -12,6 +12,8 @@ import xyz.korme.fastfation.model.User;
 import xyz.korme.fastfation.service.timeUtil.TimeUtil;
 import xyz.korme.fastfation.service.wxapi.WxApi;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -35,6 +37,10 @@ public class UserController {
     public ResponseEntity insertUser(RequestUser data) {
         //获取用户openid
 
+        //String openid = wxApi.getOpenid(data.getCode());
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        System.out.println("init");//设置日期格式
+        System.out.println(df.format(new Date()));
         String openid = wxApi.getOpenid(data.getCode());
         if (openid == null || openid == "") {
             System.out.println("错了错了错了错了错了错了错了错了");

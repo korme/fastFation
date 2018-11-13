@@ -52,7 +52,7 @@ public class OrderController {
         List<OrderRequset> result=new ArrayList();
         for(Order i:temp){
             Integer orderid=i.getOrderId();
-            List<SoldOutRequset> tmp=soldOutMapper.selectSoldList(i.getOrderId());
+            List<SoldOutRequset> tmp=soldOutMapper.selectSoldList(orderid);
             OrderRequset orderRequset=new OrderRequset(i.getCreateTime(),i.getOrderStatue(),
                     i.getOrderId(),tmp,priceToString.priceToString(i.getOrderPrice()));
             result.add(orderRequset);

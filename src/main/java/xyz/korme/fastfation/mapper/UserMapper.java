@@ -14,6 +14,6 @@ public interface UserMapper {
             "values(#{user.nickname},#{user.openid},#{user.sessionKey},#{user.createTime})")
     void insertUserData(@Param("user") User user);
 
-    @Select("if exists (select * from user where openid=#{openid}) select '1' else select '0'")
+    @Select("select count(*) from user where openid=#{openid}")
     int existOpenid(@Param("openid")String openid);
 }

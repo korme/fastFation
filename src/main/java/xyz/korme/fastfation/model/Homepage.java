@@ -5,7 +5,16 @@ public class Homepage {
     private Integer position;
     private Integer adStatus;
     private Integer adType;
+    private Integer referTo;
     private String img;
+
+    public Integer getReferTo() {
+        return referTo;
+    }
+
+    public void setReferTo(Integer referTo) {
+        this.referTo = referTo;
+    }
 
     public Integer getAdId() {
         return adId;
