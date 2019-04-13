@@ -24,3 +24,4 @@
 /nbdist/
 /.nb-gradle/
 *.yml
+*.pfx
